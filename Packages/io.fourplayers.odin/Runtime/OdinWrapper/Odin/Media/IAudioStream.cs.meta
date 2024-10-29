@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 59d7dc4a5b880254fbd4c18ac1e7a5f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208568
+  packageName: ODIN Voice Chat
+  packageVersion: 1.6.6
+  assetPath: Packages/io.fourplayers.odin/Runtime/OdinWrapper/Odin/Media/IAudioStream.cs
+  uploadId: 700343

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 3cc3c4b2c2949b149ad7362707368fa0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OdinBanner: {fileID: 2800000, guid: ea9c35b1f04e56e438236790736a0791, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208568
+  packageName: ODIN Voice Chat
+  packageVersion: 1.6.6
+  assetPath: Packages/io.fourplayers.odin/Editor/OdinEditorConfigEditor.cs
+  uploadId: 700343

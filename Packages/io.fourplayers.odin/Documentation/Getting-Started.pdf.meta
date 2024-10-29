@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dcf0717f2ba1f48139c1c92ac9e709fb
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208568
+  packageName: ODIN Voice Chat
+  packageVersion: 1.6.6
+  assetPath: Packages/io.fourplayers.odin/Documentation/Getting-Started.pdf
+  uploadId: 700343

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 83c57a294596e024c83d2b1221e6217d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208568
+  packageName: ODIN Voice Chat
+  packageVersion: 1.6.6
+  assetPath: Packages/io.fourplayers.odin/Runtime/OdinWrapper/Odin/Room/RoomCollection.cs
+  uploadId: 700343

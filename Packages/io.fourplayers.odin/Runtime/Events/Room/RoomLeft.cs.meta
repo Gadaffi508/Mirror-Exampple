@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6b65495c34d073041b5274996daf969c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208568
+  packageName: ODIN Voice Chat
+  packageVersion: 1.6.6
+  assetPath: Packages/io.fourplayers.odin/Runtime/Events/Room/RoomLeft.cs
+  uploadId: 700343

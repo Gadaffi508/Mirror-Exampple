@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 97f5b59c9e4fafd4398fd3711fcebb0c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 208568
+  packageName: ODIN Voice Chat
+  packageVersion: 1.6.6
+  assetPath: Packages/io.fourplayers.odin/Runtime/OdinWrapper/CShared.shproj
+  uploadId: 700343
