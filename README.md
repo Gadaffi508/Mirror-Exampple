@@ -1,12 +1,12 @@
-Unity Multiplayer Sesli Sohbet Projesi
+# Unity Multiplayer Sesli Sohbet Projesi
 Bu proje, Unity'de Mirror ve Odin kullanarak multiplayer bir oyun içerisinde sesli sohbet özelliğini entegre etmeyi göstermektedir. Oyun içerisinde oda oluşturulduğunda, oyuncular otomatik olarak sesli sohbete bağlanır ve birbirleriyle iletişime geçebilirler.
 
-Özellikler
+## Özellikler
 🎙️ Sesli Sohbet: Oda kurulduğu anda oyuncular arasında sesli iletişim başlar.
 🔄 Otomatik Entegrasyon: Her oyuncu odaya katıldığında sesli sohbeti otomatik olarak başlatır.
 📡 Mirror ile Senkronizasyon: Unity’nin Mirror kütüphanesi kullanılarak multiplayer bağlantı ve senkronizasyon sağlanır.
 🔧 Odin SDK ile Ayarlar: Unity Asset Store’dan indirilen Odin SDK ile sesli sohbet sisteminin kurulumu ve yapılandırılması yapılmıştır.
-Kurulum
+## Kurulum
 Mirror ve Odin Kurulumu: Proje Unity'de Mirror ve Odin SDK kullanılarak geliştirilmiştir.
 
 Mirror ve Odin'i Unity Asset Store’dan indirin ve projeye dahil edin.
@@ -39,13 +39,13 @@ public class VoiceChatManager : NetworkBehaviour
 
 ```
 
-Kullanım
+## Kullanım
 Oda Kurulumu: Oyuncular oyuna girdiğinde oda oluşturulur ve sesli sohbet otomatik olarak başlar.
 Sesli Sohbet: Oyun içerisinde iletişime geçmek için ekstra bir ayar gerekmez; her oyuncu otomatik olarak sesli sohbete bağlanır.
 Katkıda Bulunma
 Bu projeye katkıda bulunmak isteyenler için pull request’ler açıktır. Her türlü geliştirme önerisi ve katkı memnuniyetle karşılanır.
 
-Lisans
+## Lisans
 Bu proje MIT lisansı ile lisanslanmıştır. Detaylar için LICENSE dosyasına göz atabilirsiniz.
 
 İlgili Etiketler
