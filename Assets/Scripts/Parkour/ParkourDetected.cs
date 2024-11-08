@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class ParkourDetected : MonoBehaviour
 {
@@ -12,13 +14,32 @@ public class ParkourDetected : MonoBehaviour
     private RaycastHit _hit;
     private Transform _parkourPos;
     private Vector3 _offset;
+
+    private PlayerMove _move;
     
     [Space]
     [Header("Gizmos Settings")]
     [HideInInspector]
     public bool showOnDrawGizmos = false;
+    
+    [Header("IK Settings")]
+    public Transform leftHandTarget;
+    public Transform rightHandTarget;
+
+    public TwoBoneIKConstraint left;
+    public TwoBoneIKConstraint right;
+    
+    [Space]
+    [Header("Move Options")]
+    public float moveSpeed = 3f; 
+    [Space]
 
     private bool isJumped = false;
+
+    private void Start()
+    {
+        _move = GetComponent<PlayerMove>();
+    }
 
     private void Update()
     {
@@ -37,26 +58,36 @@ public class ParkourDetected : MonoBehaviour
             
             Vector3 detectionPoint = GetClosestPointOnCube(_hit.transform.position);
 
-            _offset = new Vector3(detectionPoint.x,_parkourPos.GetComponent<Collider>().bounds.extents.y * 2 + offsetHeight,detectionPoint.z);
+            _offset = new Vector3(detectionPoint.x,
+                                  _parkourPos.GetComponent<Collider>().bounds.extents.y * 2 + offsetHeight,
+                                  detectionPoint.z);
             
             isJumped = true;
         }
         else
         {
             isJumped = false;
-            
             _parkourPos = null;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isJumped == true)
         {
-            Vector3 _offsetHeight = new Vector3(_offset.x,_offset.y + 1,_offset.z);
+            _move.SetMove();
             
-            transform.position = _offsetHeight;
+            Vector3 xOffset = new Vector3(_offset.x, transform.position.y, _offset.z - 0.3f);
+
+            left.weight = 1;
+            right.weight = 1;
+            
+            StartCoroutine(MoveToPosition(xOffset, 0.5f));
+            StartCoroutine(WaitForParkourAnimation());
         }
+        
+        leftHandTarget.position = _offset + transform.right * -0.2f;
+        rightHandTarget.position = _offset + transform.right * 0.2f;
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
 
@@ -69,8 +100,13 @@ public class ParkourDetected : MonoBehaviour
             Vector3 detectionPoint = GetClosestPointOnCube(parkourCenter);
 
             Gizmos.DrawLine(orbital.position, detectionPoint);
+
+            Vector3 xOffset = new Vector3(detectionPoint.x, detectionPoint.y, detectionPoint.z - 0.3f);
+            Gizmos.DrawSphere(xOffset, 0.2f);
             
-            Vector3 offset = new Vector3(detectionPoint.x,_parkourPos.GetComponent<Collider>().bounds.extents.y * 2 + offsetHeight,detectionPoint.z);
+            Vector3 offset = new Vector3(detectionPoint.x,
+                                         _parkourPos.GetComponent<Collider>().bounds.extents.y * 2 + offsetHeight,
+                                         detectionPoint.z);
 
             Gizmos.DrawSphere(offset, 0.2f);
 
@@ -80,8 +116,46 @@ public class ParkourDetected : MonoBehaviour
             Gizmos.DrawRay(orbital.position, orbital.forward * detectionRange);
         }
     }
+    
+    IEnumerator MoveToPosition(Vector3 targetPosition, float distance)
+    {
+        float positionThreshold = distance;
 
-    private Vector3 GetClosestPointOnCube(Vector3 cubeCenter)
+        while (Vector3.Distance(transform.position, targetPosition) > positionThreshold)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, targetPosition) <= positionThreshold + 0.2f)
+            {
+                break;
+            }
+
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+    }
+    
+    IEnumerator WaitForParkourAnimation()
+    {
+        float cubeHeight = _parkourPos.GetComponent<Collider>().bounds.extents.y * 2;
+        float adjustedWaitTime = cubeHeight / moveSpeed; 
+        
+        Vector3 _offsetHeight = new Vector3(_offset.x, _offset.y + 0.5f, _offset.z);
+        
+        StartCoroutine(MoveToPosition(_offsetHeight, 0.001f));
+        
+        yield return new WaitForSeconds(adjustedWaitTime);
+
+        transform.position = _offsetHeight;
+        
+        left.weight = 0;
+        right.weight = 0;
+
+        _move.SetMove();
+    }
+
+    Vector3 GetClosestPointOnCube(Vector3 cubeCenter)
     {
         Vector3 direction = orbital.position - cubeCenter;
 
