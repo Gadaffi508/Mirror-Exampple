@@ -86,7 +86,7 @@ public class PlayerMove : MonoBehaviour
         
         Invoke(nameof(SetVelocity),0.1f);
         
-        Invoke(nameof(ResetRestrictions),3f);
+        Invoke(nameof(ResetRestrictions),5f);
     }
 
     public void ResetRestrictions()
