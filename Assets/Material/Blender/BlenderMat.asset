@@ -1,105 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9164393968197950107
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a49b1587e953b488be8f8385b78049, type: 3}
-  m_Name: Color Ramp
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -456, y: 280}
-  ports:
-    keys:
-    - sFloatFac
-    - Result
-    values:
-    - _fieldName: sFloatFac
-      _node: {fileID: -9164393968197950107}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      _nodePortType: float
-      connections: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Result
-      _node: {fileID: -9164393968197950107}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      _nodePortType: vector4
-      connections:
-      - fieldName: sColor2
-        node: {fileID: 4409065616232970011}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  useCustomColor: 0
-  nodeColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-  nodeLabel: 
-  gradientInColor:
-    Interpolation: 2
-    InterpolationHSV: 1
-    ColorMode: 1
-    keys:
-    - color:
-        r: 0.9838279
-        g: 0.0007757978
-        b: 0.007979612
-        a: 1
-      time: 0
-    - color:
-        r: 0
-        g: 0.002552969
-        b: 0.77335167
-        a: 1
-      time: 1
-    selectedKeyIndex: 1
-  sGradientIn: gradient_29980
-  floatFac: 0.5
-  sFloatFac: 
-  Result: 
---- !u!114 &-4779307527658719950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d56f9596738e4344c90076c7c9de3356, type: 3}
-  m_Name: Material Input
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -712, y: 104}
-  ports:
-    keys:
-    - inputvariable_1
-    values:
-    - _fieldName: inputvariable_1
-      _node: {fileID: -4779307527658719950}
-      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      _nodePortType: 
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  useCustomColor: 0
-  nodeColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-  nodeLabel: 
-  portAddName: name
-  inputvariable_1: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,22 +13,19 @@ MonoBehaviour:
   m_Name: BlenderMat
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: 1505651104609271911}
-  - {fileID: 4409065616232970011}
-  - {fileID: -4779307527658719950}
-  - {fileID: 8159207518093278471}
-  - {fileID: -9164393968197950107}
+  - {fileID: 1524993312249522938}
+  - {fileID: 2968096431766903760}
+  - {fileID: 5457867270539032882}
   test: {fileID: 0}
-  outNode: {fileID: 1505651104609271911}
-  inNode: {fileID: -4779307527658719950}
+  outNode: {fileID: 1524993312249522938}
+  inNode: {fileID: 2968096431766903760}
   hlslFileName: BlenderMat
-  newFilePath: C:/UnityProjects/MirrorExample/Mirror-Exampple/Assets/Material/BlenderMat.asset
+  newFilePath: C:/UnityProjects/MirrorExample/Mirror-Exampple/Assets/Material/Blender/BlenderMat.asset
   graphMenuPath: Material Nodes Graph
   isEnable: 0
   mousePos: {x: 0, y: -19}
   TextureCurvePaths:
-  - Assets/Material/Includes/BlenderMat_3618_Gradient.png
-  - Assets/Material/Includes/BlenderMat_29980_Gradient.png
+  - Assets/Material/Blender/Includes/BlenderMat_1363386_Gradient.png
   OldOutputNodeSlotNames:
   - Color_vector4
   - Normal_vector3
@@ -138,7 +35,7 @@ MonoBehaviour:
   - Metallic_float
   - Specular_vector4
   OldInputNodeSlotNames: []
---- !u!114 &1505651104609271911
+--- !u!114 &1524993312249522938
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +61,7 @@ MonoBehaviour:
     - Specular_vector4
     values:
     - _fieldName: outputvariable_1
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: 
@@ -174,20 +71,20 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Color_vector4
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: vector4
       connections:
-      - fieldName: out_color
-        node: {fileID: 4409065616232970011}
+      - fieldName: Result
+        node: {fileID: 5457867270539032882}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: Normal_vector3
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: vector3
@@ -197,7 +94,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: Smoothness_float
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: float
@@ -207,7 +104,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: Emission_vector4
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: vector4
@@ -217,7 +114,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: AmbientOcculusion_float
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: float
@@ -227,7 +124,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: Metallic_float
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: float
@@ -237,7 +134,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: Specular_vector4
-      _node: {fileID: 1505651104609271911}
+      _node: {fileID: 1524993312249522938}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: vector4
@@ -251,7 +148,7 @@ MonoBehaviour:
   nodeLabel: 
   portAddName: name
   outputvariable_1: 0
---- !u!114 &4409065616232970011
+--- !u!114 &2968096431766903760
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,63 +157,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7d1109a549be94891b706d672a8b0d, type: 3}
-  m_Name: Mix RGB
+  m_Script: {fileID: 11500000, guid: d56f9596738e4344c90076c7c9de3356, type: 3}
+  m_Name: Material Input
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -99.45998, y: 36.399967}
+  position: {x: -400, y: 0}
   ports:
     keys:
-    - sFac
-    - sColor1
-    - sColor2
-    - out_color
+    - inputvariable_1
     values:
-    - _fieldName: sFac
-      _node: {fileID: 4409065616232970011}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+    - _fieldName: inputvariable_1
+      _node: {fileID: 2968096431766903760}
+      _typeQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      _nodePortType: float
+      _nodePortType: 
       connections: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: sColor1
-      _node: {fileID: 4409065616232970011}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      _nodePortType: vector4
-      connections:
-      - fieldName: Result
-        node: {fileID: 8159207518093278471}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: sColor2
-      _node: {fileID: 4409065616232970011}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      _nodePortType: vector4
-      connections:
-      - fieldName: Result
-        node: {fileID: -9164393968197950107}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: out_color
-      _node: {fileID: 4409065616232970011}
-      _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      _nodePortType: vector4
-      connections:
-      - fieldName: Color_vector4
-        node: {fileID: 1505651104609271911}
-        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -324,24 +179,9 @@ MonoBehaviour:
   useCustomColor: 0
   nodeColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   nodeLabel: 
-  clamp: 0
-  fac: 0.5
-  color1:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  color2:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  sFac: 
-  sColor1: float4(1, 1, 1, 1)
-  sColor2: float4(1, 1, 1, 1)
-  out_color: 
-  blendType: 1
---- !u!114 &8159207518093278471
+  portAddName: name
+  inputvariable_1: 0
+--- !u!114 &5457867270539032882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -354,14 +194,14 @@ MonoBehaviour:
   m_Name: Color Ramp
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -456, y: -24}
+  position: {x: -119.493614, y: 104.94939}
   ports:
     keys:
     - sFloatFac
     - Result
     values:
     - _fieldName: sFloatFac
-      _node: {fileID: 8159207518093278471}
+      _node: {fileID: 5457867270539032882}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: float
@@ -371,13 +211,13 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Result
-      _node: {fileID: 8159207518093278471}
+      _node: {fileID: 5457867270539032882}
       _typeQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       _nodePortType: vector4
       connections:
-      - fieldName: sColor1
-        node: {fileID: 4409065616232970011}
+      - fieldName: Color_vector4
+        node: {fileID: 1524993312249522938}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -392,19 +232,19 @@ MonoBehaviour:
     ColorMode: 1
     keys:
     - color:
-        r: 0.96780926
-        g: 0.6570479
-        b: 0
+        r: 1
+        g: 0.7681513
+        b: 0.23074007
         a: 1
       time: 0
     - color:
-        r: 0.013089805
+        r: 1
         g: 1
-        b: 0
+        b: 1
         a: 1
       time: 1
-    selectedKeyIndex: 1
-  sGradientIn: gradient_3618
+    selectedKeyIndex: 0
+  sGradientIn: gradient_1363386
   floatFac: 0.5
   sFloatFac: 
   Result: 
