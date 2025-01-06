@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.blendernodesgraph.core": "https://github.com/Warwlock/blender-nodes-subgraph.git",
     "com.unity.ai.navigation": "2.0.5",
     "com.unity.animation.rigging": "1.3.0",
     "com.unity.collab-proxy": "2.5.2",
